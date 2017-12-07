@@ -101,6 +101,7 @@ Check the below link:
 ### HA Network on ESXi
 ![](https://i.imgur.com/Dy78s39.png)
 
+
 **Note:** Promiscuous mode must only be enabled on nested environments such as the one I’m using. **It is not** an vCSA HA requirement.
 
 ### External PSC " Platform Service Controller "
@@ -111,9 +112,11 @@ Check the below link:
 [https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-enable-vcenter-ha-part-5/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-enable-vcenter-ha-part-5/)
 [https://www.virtuallyghetto.com/2015/12/what-does-load-balancing-the-platform-services-controller-really-give-you.html](https://www.virtuallyghetto.com/2015/12/what-does-load-balancing-the-platform-services-controller-really-give-you.html)
 
-For a demo purpose, I will deploy vCenter Server with an Embedded PSC:
+**For a demo purpose, I will deploy vCenter Server with an Embedded PSC:**
 
 ![](https://i.imgur.com/qMnXMe8.png)
+
+Check hostanme using the lookup command.
 
 ![](https://i.imgur.com/oxV937l.png)
 
@@ -137,3 +140,28 @@ For a demo purpose, I will deploy vCenter Server with an Embedded PSC:
 
 ![](https://i.imgur.com/CtIMcEe.png)
 
+![](https://i.imgur.com/CMcXHK9.png)
+
+vCenter was not reachable since the port group created is not reflecting the correct VLAN information: to be fixed 
+
+![](https://i.imgur.com/Be7bURh.png)
+
+![](https://i.imgur.com/F76FGdo.png)
+
+Resume phase 2:
+
+![](https://i.imgur.com/TwrEH30.png)
+
+![](https://i.imgur.com/XpYGzfg.png)
+
+![](https://i.imgur.com/2KhK3MP.png)
+
+![](https://i.imgur.com/toHgpzh.png)
+
+![](https://i.imgur.com/F0hnyV2.png)
+
+![](https://i.imgur.com/dYThrtn.png)
+
+![](https://i.imgur.com/0z4xS2w.png)
+
+![](https://i.imgur.com/Jqm1zvz.png)
