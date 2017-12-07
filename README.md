@@ -59,4 +59,81 @@ After server deployment, There will be an initial configuration which require co
 2. Hostname
 3. Domain 
 4. DNS Configuration:L Make sure that forward and reverse lookup is configured for all servers
+> ESXi Initial Configuration:
+
+Using a browser, Login to each ESXi https://<FQDN>, do the following:
+1) Configure NTP
+2) Configure Domain and Active Directory Authentication if needed.
+3) License the esxi.
+4) Enable SSH if needed.
+
+![](https://i.imgur.com/MK0zGsK.png)
+
+![](https://i.imgur.com/l6lxMg3.png)
+
+![](https://i.imgur.com/kbOWGqF.png)
+
+# vCenter Deployment
+## vCenter High-Avability
+![](https://i.imgur.com/1PUsHBp.png)
+
+Check the below link:
+[https://kb.vmware.com/s/article/2148442](https://kb.vmware.com/s/article/2148442 "Deploying vCenter High Availability with network addresses in separate subnets")
+[https://www.altaro.com/vmware/how-to-deploy-a-vcenter-ha-cluster-part-1/](https://www.altaro.com/vmware/how-to-deploy-a-vcenter-ha-cluster-part-1/)
+[https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-33AC12C8-EEB7-422D-831B-B1B5A7FECC44.html](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.avail.doc/GUID-33AC12C8-EEB7-422D-831B-B1B5A7FECC44.html)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-overview-part-1/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-overview-part-1/)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-external-psc-deployment-part-2/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-external-psc-deployment-part-2/)
+
+![](https://i.imgur.com/hYnOjdo.png)
+> Requirements:
+> 1) vCSA 6.5. HA is only supported on this release
+> 2) HA cluster nodes are only supported on ESXi 5.5 and/or vCenter Server 5.5 or later
+> 3) Ideally, every HA node should reside on a different host and datastore. Optionally, the hosts should be in a DRS cluster. A minimum of 3 hosts is then required.
+> 4) The vCSA deployment size should be set to Small (4 vCPUs / 16GB RAM) or better.
+> 5) Create a port group on ESXi for the private HA network. Optionally, you can have a dedicated vSwitch if network isolation is a requirement.
+> 5) The HA private network must reside on a different subnet other than that used for management.
+> 6) You cannot mix IP4 and IP6 addressing when configuring networking on the nodes.
+> 7) Network latency on the HA network must be less than 10ms.
+> 8) No gateway for the HA network must be specified when configuring the nodes.
+> 9) You will need one IP address for management and three private IP addresses, one for each HA node.
+> 10) DNS A and PTR records for the Active node’s management network (i.e. FDQN for the vCSA).
+
+### HA Network on ESXi
+![](https://i.imgur.com/Dy78s39.png)
+
+**Note:** Promiscuous mode must only be enabled on nested environments such as the one I’m using. **It is not** an vCSA HA requirement.
+
+### External PSC " Platform Service Controller "
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-overview-part-1/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-overview-part-1/)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-external-psc-deployment-part-2/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-external-psc-deployment-part-2/)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-load-balancer-config-part-3/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-load-balancer-config-part-3/)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-deploy-vcenter-part-4/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-deploy-vcenter-part-4/)
+[https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-enable-vcenter-ha-part-5/](https://thewificable.com/2017/01/06/vcenter-6-5-high-availability-enable-vcenter-ha-part-5/)
+[https://www.virtuallyghetto.com/2015/12/what-does-load-balancing-the-platform-services-controller-really-give-you.html](https://www.virtuallyghetto.com/2015/12/what-does-load-balancing-the-platform-services-controller-really-give-you.html)
+
+For a demo purpose, I will deploy vCenter Server with an Embedded PSC:
+
+![](https://i.imgur.com/qMnXMe8.png)
+
+![](https://i.imgur.com/oxV937l.png)
+
+![](https://i.imgur.com/VS0SRQA.png)
+
+![](https://i.imgur.com/FqdPDsK.png)
+
+![](https://i.imgur.com/QSbtH2f.png)
+
+![](https://i.imgur.com/fsU38rR.png)
+
+![](https://i.imgur.com/ghZmjz5.png)
+
+![](https://i.imgur.com/YqZP0lC.png)
+
+![](https://i.imgur.com/Fj05dAs.png)
+
+![](https://i.imgur.com/OM4KqCe.png)
+
+![](https://i.imgur.com/iIkz8p5.png)
+
+![](https://i.imgur.com/CtIMcEe.png)
 
