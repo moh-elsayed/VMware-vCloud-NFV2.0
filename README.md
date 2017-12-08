@@ -165,3 +165,7 @@ Resume phase 2:
 ![](https://i.imgur.com/0z4xS2w.png)
 
 ![](https://i.imgur.com/Jqm1zvz.png)
+
+Will follow the same steps for the resource/edge cluster vcenter.
+
+![](https://i.imgur.com/2GQhKXx.png)
