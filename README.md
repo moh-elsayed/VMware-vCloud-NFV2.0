@@ -21,20 +21,22 @@ Through out this deployment exercise, we will show a setp-by-step deployment and
    Seq  | Name | Network Address | VLAN_ID | Switch | Tagged/Untagged | TYPE
 ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
 1 	| Ext-Mgmt | 172.17.84.0/24 | 3084  | mgmt/Global | Tagged | VMkernal
-2   | vMotion-mgmt | 10.30.200.0/24 | 200 | ToR | Tagged | VMkernal
-3  | vSAN | 10.30.300.0/24 | 300 | ToR | Tagged | VMkernal
-4  | Replication | 10.30.400.0/24 | 400 | ToR | Tagged | VMkernal
+2   | vMotion-mgmt | 10.30.20.0/24 | 200 | ToR | Tagged | VMkernal
+3  | vSAN | 10.30.30.0/24 | 300 | ToR | Tagged | VMkernal
+4  | Replication | 10.30.40.0/24 | 400 | ToR | Tagged | VMkernal
 
 > Workload network requirements:
 
    Seq  | Name | Network Address | VLAN_ID | Switch | Tagged/Untagged | TYPE
 ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | -------------
-1 	| VNF-Mgmt | 192.0.500.0/24 | 500  | ToR | Tagged | Virtual Machine
-2   | VNF-Ext | 192.0.700.0/24 | 700 | ToR | Tagged | Virtual Machine
-3  | VxLAN-Underlay | 10.0.600.0/24 | 600 | ToR | Tagged | VMkernal
+1 	| VNF-Mgmt | 192.0.50.0/24 | 500  | ToR | Tagged | Virtual Machine
+2   | VNF-Ext | 192.0.70.0/24 | 700 | ToR | Tagged | Virtual Machine
+3  | VxLAN-Underlay | 10.0.60.0/24 | 600 | ToR | Tagged | VMkernal
 
 # ESXi Deployment
 Using the iDRAC and virtual CDROM:
+for Rapid esxi deployment, check the below:
+[https://virtualfrog.wordpress.com/2017/05/02/introducing-the-new-esxi-staging-appliance/](https://virtualfrog.wordpress.com/2017/05/02/introducing-the-new-esxi-staging-appliance/)
 
 ![](https://i.imgur.com/iPgvyM3.png) 
 
@@ -169,3 +171,9 @@ Resume phase 2:
 Will follow the same steps for the resource/edge cluster vcenter.
 
 ![](https://i.imgur.com/2GQhKXx.png)
+
+## Scaleio with vCenter 6.5 ( NFV PoD )
+
+## vSAN in a greenfield ( Management PoD )
+[https://virtualfrog.wordpress.com/2017/09/07/setting-up-a-greenfield-vsan-cluster-on-6-5-update-1/](https://virtualfrog.wordpress.com/2017/09/07/setting-up-a-greenfield-vsan-cluster-on-6-5-update-1/)
+
