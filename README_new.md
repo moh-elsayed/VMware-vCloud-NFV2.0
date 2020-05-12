@@ -1,6 +1,8 @@
 # VMware-vCloud-NFV2.0
 ![](https://i.imgur.com/IBIJ0iF.jpg)
 
+![](https://i.imgur.com/ZkF6QYV.jpg)
+
 Greenfield installation of a Vcloud NFV 2.0 using the following versions:
 - VMware vCenter 6.5e
 - VMware ESXi 6.5d
