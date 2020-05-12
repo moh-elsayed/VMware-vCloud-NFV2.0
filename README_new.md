@@ -1,6 +1,6 @@
 # VMware-vCloud-NFV2.0
-- - - - - 
 ![](https://i.imgur.com/IBIJ0iF.jpg)
+
 Greenfield installation of a Vcloud NFV 2.0 using the following versions:
 - VMware vCenter 6.5e
 - VMware ESXi 6.5d
@@ -76,6 +76,8 @@ Using a browser, Login to each ESXi https://<FQDN>, do the following:
 ![](https://i.imgur.com/l6lxMg3.png)
 
 ![](https://i.imgur.com/kbOWGqF.png)
+
+
 
 # vCenter Deployment
 ## vCenter High-Avability
